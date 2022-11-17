@@ -12,7 +12,7 @@ export function AppSimpleStaticData() {
                 </div>
             </header>
             <main className="container">
-                <UsersPanel users={userDataProvider}/>
+                <UsersPanel users={userDataProvider} />
             </main>
         </>
     )

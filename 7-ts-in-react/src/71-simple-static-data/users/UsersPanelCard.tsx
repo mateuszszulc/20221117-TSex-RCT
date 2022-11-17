@@ -1,16 +1,18 @@
-export function UsersPanelCard({user}: any) {
+import { User } from "./User";
+
+export function UsersPanelCard({ user }: { user: User }) {
     return (
         <div className="card">
             <div className="card-image">
                 <figure className="image is-4by3">
-                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder" />
                 </figure>
             </div>
             <div className="card-content">
                 <div className="media">
                     <div className="media-left">
                         <figure className="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder" />
                         </figure>
                     </div>
                     <div className="media-content">
@@ -18,9 +20,9 @@ export function UsersPanelCard({user}: any) {
                         <p className="subtitle is-6">{user.email}</p>
                     </div>
                 </div>
-                 <div className="content">
-                     {user?.company?.catchPhrase}
-                 </div>
+                <div className="content">
+                    {user?.company?.catchPhrase}
+                </div>
                 <div className="content">
                     {user.website}
                 </div>
