@@ -10,33 +10,54 @@
  * next:
  * - create the appropriate objects and pass them to `giveFullName` to confirm that the code works correctly
  * */
- 
 
-function joiner (strTuple: [string, string]): string  {
-    return strTuple[0] + ' ' + strTuple[1];
+
+// const array = ['', '', '']
+
+// joiner(array) //?
+
+function joiner(strTuple: [string, string, string?]): string {
+    return strTuple.join(' ');
 }
+
 
 interface User {
     name: string;
     lastName: string;
-    sex: string;
+    sex?: 'female' | 'male';
     vipStatus: boolean;
+    //shout() :void
 }
+
+const myUser: User = {
+    name: 'John',
+    lastName: 'Kowalsky',
+    sex: 'male',
+    vipStatus: false,
+    // shout(): string {
+    //    return '' 
+    // }
+}
+
+// that will not work (which is what we intended (@see interface above))
+// myUser.shout().toUpperCase()
+
+giveFullName(myUser) //?
 
 function giveFullName(myUser: User): string {
-    const fullName: string = myUser.name + ' ' + myUser.lastName;
+    const fullName: string = joiner([myUser.name, myUser.lastName])
     let prefix = '';
     let suffix = '';
-    if(myUser.sex === 'female') {
+    if (myUser.sex === 'female') {
         prefix = 'Mrs.';
-    } else if(myUser.sex === 'male') {
+    } else if (myUser.sex === 'male') {
         prefix = 'Mr.';
     }
-    if(myUser.vipStatus) {
+    if (myUser.vipStatus) {
         suffix = ' - the VIP'
     }
-    return prefix + ' ' + fullName + suffix;
+    return joiner([prefix, fullName, suffix]);
 }
 
-export {};
+export { };
 
