@@ -28,12 +28,12 @@ export class ShoppingCart {
 }
 
 
-// Testowanie implementacji:
+// implementtion testing:
 
 const shoppingCart = new ShoppingCart()
 
 shoppingCart.addItem({})
-// Zobaczmy typechecking:
+// Type checking:
 shoppingCart.items.push({})
 
 shoppingCart.getAll().push({})

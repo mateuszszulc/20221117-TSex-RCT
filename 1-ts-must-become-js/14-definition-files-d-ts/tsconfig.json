@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "ESNext",
     "allowJs": true,
-    "checkJs": false
+    "checkJs": false,
+    "rootDir": ".",
+    "outDir": "./production"
   }
 }
