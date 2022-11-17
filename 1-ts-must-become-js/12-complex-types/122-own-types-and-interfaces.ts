@@ -13,6 +13,16 @@
  *
  * */
 
+type Currency = 'PLN' | 'USD' | 'EUR'
+type Money = { value: number, currency: Currency };
+// type Money = number // before
+
+
+// 200 places with Money in your code
+// const cash: Money = 20 // before
+
+const cash2: Money = {value: 20, currency: 'USD'};
+
 type SuperUser = {
     name: string;
     isAdmin: boolean;
@@ -54,10 +64,10 @@ type Hero = SuperUser & { superPower: string }
 
 
 // such a call will not be possible, but only if there is a flag in tsconfig.json: "strict": true
-myOtherUser.checkIsAdmin()
+// myOtherUser.checkIsAdmin()
 
 // This is a good option because to make sure the method exists and call it safely,
 // we need to write:
-myOtherUser?.checkIsAdmin?.()
+// myOtherUser?.checkIsAdmin?.()
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
