@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "ritwickdey.LiveServer",
+    "dbaeumer.vscode-eslint",
+    "vscode-icons-team.vscode-icons",
+    "WallabyJs.quokka-vscode",
+    "achil.vscode-javascript-repl",
+    "humao.rest-client"
+  ]
+}

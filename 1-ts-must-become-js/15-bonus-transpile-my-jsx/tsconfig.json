@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    // If we activate this, we don't have to write: import * as React ... only: import React ...
+    // "allowSyntheticDefaultImports": true
+    "skipLibCheck": true // Disable parsing of the React.d.ts file (because it's fake)
+
+    /*
+
+      Note, in a real project we won't have to use such "tricks".
+
+      Instead, we install dev, full type definitions for React:
+      ```
+      npm install -D @types/react
+      ```
+    */
+  }
+}

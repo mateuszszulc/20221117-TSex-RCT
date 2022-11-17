@@ -1,0 +1,37 @@
+{
+    "auctions": [
+        {
+            "id": 1,
+            "title": "Camera parts",
+            "description": "",
+            "imgURL": "https://picsum.photos/id/36/200/200",
+            "price": 1232
+        },
+        {
+            "id": 2,
+            "title": "Laptop",
+            "imgURL": "https://picsum.photos/id/48/200/200",
+            "price": 2039
+        },
+        {
+            "id": 3,
+            "title": "Smartphone",
+            "imgURL": "https://picsum.photos/id/160/200/200",
+            "price": 5463
+        },
+        {
+            "id": 4,
+            "title": "Car",
+            "description": "",
+            "imgURL": "https://picsum.photos/id/183/200/200",
+            "price": 12322
+        },
+        {
+            "id": 5,
+            "title": "Car 2",
+            "description": "",
+            "imgURL": "https://picsum.photos/id/181/200/200",
+            "price": 12999
+        }
+    ]
+}

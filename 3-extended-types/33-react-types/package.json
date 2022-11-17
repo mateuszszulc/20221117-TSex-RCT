@@ -1,0 +1,7 @@
+{
+  "name": "33-react-types",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/react": "^18.0.23"
+  }
+}
