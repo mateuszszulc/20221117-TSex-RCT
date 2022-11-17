@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 // The comment above tells the typescript compiler not to parse this file...
 /**
  * Task 1.6.1:
@@ -19,33 +19,34 @@
  * // @ts-ignore
  * */
 
-const MyHello = 'Hello';
+let MyHello = 'Hello';
 console.log(MyHello, 'World')
 
 MyHello = 'Serious';
 const help = "HelpMe out!"
 
-let do = true;
-const LARGE-number = 2048
+let flag = true;
+const LARGE_number = 2048
 
-here was supposed to be a comment that addNumbers must return a number!
-function addNumbers(a , b) {
+// here was supposed to be a comment that addNumbers must return a number!
+function addNumbers(a: number, b: number) {
     return a + b
 }
 
-let result: string;
-result = addNumbers(10, 20);
+let result = addNumbers(10, 20);
 
 console.log('Result is:', result);
 
-console.log(helloStranger())
+
 
 const helloStranger = (): string => 'Hello Stranger !';
 
-function randomNumber(): string {
+console.log(helloStranger())
+
+function randomNumber(): number {
     return Math.random() * 100;
 }
 
 console.log('You reached the end! - BRAVO')
 
-export {};
+export { };
