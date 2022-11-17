@@ -1,7 +1,9 @@
 import { User } from './User'
 import { UsersPanelCard } from './UsersPanelCard'
 
-export function UsersPanel({ users }: { users: User[] }) {
+type UsersPanelProps = { users: User[], onSomeAction?: (name: string) => void }
+
+export function UsersPanel({ users, onSomeAction }: UsersPanelProps) {
     return (
         <section className="columns is-multiline">
             {

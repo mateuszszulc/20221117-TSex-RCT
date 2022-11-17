@@ -1,6 +1,8 @@
 import { User } from "./User";
 
-export function UsersPanelCard({ user }: { user: User }) {
+type UsersPanelCardProps = { user: User }
+
+export function UsersPanelCard({ user }: UsersPanelCardProps) {
     return (
         <div className="card">
             <div className="card-image">
