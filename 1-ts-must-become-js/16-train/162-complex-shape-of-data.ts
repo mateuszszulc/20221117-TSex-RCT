@@ -11,6 +11,8 @@
  * - create the appropriate objects and pass them to `giveFullName` to confirm that the code works correctly
  * */
 
+import { User } from "./User";
+
 
 // const array = ['', '', '']
 
@@ -20,14 +22,6 @@ function joiner(strTuple: [string, string, string?]): string {
     return strTuple.join(' ');
 }
 
-
-interface User {
-    name: string;
-    lastName: string;
-    sex?: 'female' | 'male';
-    vipStatus: boolean;
-    //shout() :void
-}
 
 const myUser: User = {
     name: 'John',
