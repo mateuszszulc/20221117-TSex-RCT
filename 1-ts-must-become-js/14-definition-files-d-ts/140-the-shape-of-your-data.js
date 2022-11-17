@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * Typescript can co-exist with JavaScript
  *
@@ -24,7 +25,11 @@
 // Now try using methods from: mathOLib to check TS + Intellisense working:
 /** @type {MathInterface} */
 // - Uncomment the lines below and check it works:
-// let mathOLib = {};
+let mathOLib = {
+    sum(a, b) {
+        throw new Error('Function not implemented.');
+    }
+};
 // console.log(mathOLib)
 
 /**
