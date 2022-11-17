@@ -29,13 +29,15 @@ class Order {
 
     payment(cashAmount: number | string | Currency) {
         if(typeof cashAmount === 'number') {
-
+            
         } else if(typeof cashAmount === 'string') {
-
+           
         } else {
-
+          
         }
     }
+
+    
 }
 
 new Order().payment(123.2);
@@ -48,6 +50,9 @@ new Order().payment({value: 2003, name: 'USD'});
 // SOLUTION:
 // Union type, and in a cosmic edition, because here literally values are data type d(o . O)b !!
 type Status = 'error' | 'loading' | 'pending' | 'success';
+
+let result: Status = 'loading'
+
 
 interface Request {
     data: unknown;

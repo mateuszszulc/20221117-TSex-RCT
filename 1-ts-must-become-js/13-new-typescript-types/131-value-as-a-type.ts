@@ -36,8 +36,11 @@ myNumber = 399
 // const myNumber = 399
 // would be perfectly fine and does the same job!
 
+export type SevenOrFiveOrThree = 7 | 5 | 3
+
 // The notation makes sense in conjunction with the so-called Union Type, which we'll talk about later
 let myLuckyNumber: 7 | 5 | 3 = 3
+let myLuckyNumber2: SevenOrFiveOrThree = 3
 // Error:
 // myLuckyNumber = 1
 // OK:
