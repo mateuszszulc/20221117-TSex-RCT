@@ -13,6 +13,7 @@ class Dog {
 class Cat {
     name: string;
     breed: string;
+    // legs: number;
 }
 
 const barkingDog: Dog = new Dog();

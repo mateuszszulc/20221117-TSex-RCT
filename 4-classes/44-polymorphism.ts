@@ -57,6 +57,10 @@ interface IClickable {
     click(): void;
 }
 
+// const cliker: IClickable = { click() {} }
+
+// console.log(cliker instanceof IClickable)
+
 class RemoteControl implements IClickable {
     click(): void {}
 }

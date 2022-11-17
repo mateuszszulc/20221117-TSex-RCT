@@ -64,7 +64,7 @@ console.log(myMovie.name)
 
 class OtherMovie {
     // a short form to express exact same thing that we have above in Movie !!!
-    constructor(public readonly name: string) {}
+    constructor(readonly name: string) {}
 }
 
 const myOtherMovie = new OtherMovie('Friends');
