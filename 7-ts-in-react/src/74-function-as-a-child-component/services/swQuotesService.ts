@@ -1,5 +1,7 @@
+import { Quote } from "../model/Quote"
+
 export const starWarsQuotesService = {
-	getAll(): Promise<any> {
+	getAll(): Promise<Quote[]> {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				resolve([

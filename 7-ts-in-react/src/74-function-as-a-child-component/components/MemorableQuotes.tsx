@@ -1,20 +1,12 @@
-import React, {  useEffect, useState } from 'react'
-import { starWarsQuotesService } from '../services/swQuotesService'
+import { Quote } from '../model/Quote'
 import { BlockQuote } from './BlockQuote'
 
-export function MemorableQuotes() {
-	const [isLoading, setLoading] = useState(false)
-	const [quotes, setQuotes] = useState<any[]>([])
+type MemorableQuotesProps = { isLoading?: boolean, quotes?: Quote[] }
 
-	useEffect(() => {
-		setLoading(true)
-		starWarsQuotesService.getAll()
-			.then((quotes) => {
-				setQuotes(quotes)
-			})
-			.finally(() => setLoading(false))
-	}, [])
+export function MemorableQuotes({ isLoading = true, quotes = [] }: MemorableQuotesProps) {
 
+	// TASK: Lift state UP to AppFunctionAsAChildComponent !
+	// Use proper types wherever you know it
 
 	return (
 		<section className="panel is-primary">
@@ -27,7 +19,7 @@ export function MemorableQuotes() {
 			}
 			{
 				!isLoading &&
-				quotes.map((q) => (<BlockQuote key={q.text} quote={q} />))
+				quotes.map(q => (<BlockQuote key={q.text} quote={q} />))
 			}
 		</section>
 	)

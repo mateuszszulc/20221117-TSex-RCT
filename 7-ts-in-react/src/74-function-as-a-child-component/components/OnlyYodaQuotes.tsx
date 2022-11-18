@@ -1,20 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { starWarsQuotesService } from '../services/swQuotesService'
+import { Quote } from '../model/Quote'
 import { BlockQuote } from './BlockQuote'
 
-export function OnlyYodaQuotes() {
-	const [isLoading, setLoading] = useState(false)
-	const [quotes, setQuotes] = useState<any[]>([])
+type OnlyYodaQuotesProps = { isLoading?: boolean, quotes?: Quote[] }
 
-	useEffect(() => {
-		setLoading(true)
-		starWarsQuotesService.getAll()
-			.then((quotes) => {
-				const yodaQuotes = quotes.filter((q: any) => q.author === 'Yoda')
-				setQuotes(yodaQuotes)
-			})
-			.finally(() => setLoading(false))
-	}, [])
+export function OnlyYodaQuotes({isLoading = true, quotes = [] } : OnlyYodaQuotesProps) {
 
 	return (
 		<section className="panel is-info">
