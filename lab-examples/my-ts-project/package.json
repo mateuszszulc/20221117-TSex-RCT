@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "init": "tsc --init"
+    "init": "tsc --init",
+    "start": "node dist/main.js"
   },
   "keywords": [],
   "author": "",
