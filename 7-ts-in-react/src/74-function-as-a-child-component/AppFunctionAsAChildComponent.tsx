@@ -1,22 +1,8 @@
-import { useEffect, useState } from 'react'
-import { starWarsQuotesService } from './services/swQuotesService'
 import { MemorableQuotes } from './components/MemorableQuotes'
 import { OnlyYodaQuotes } from './components/OnlyYodaQuotes'
-import { Quote } from './model/Quote'
+import { QuoteProvider } from './providers/QuoteProvider'
 
 export function AppFunctionAsAChildComponent() {
-
-	const [isLoading, setLoading] = useState(false)
-	const [quotes, setQuotes] = useState<Quote[]>([])
-
-	useEffect(() => {
-		setLoading(true)
-		starWarsQuotesService.getAll()
-			.then(quotes => setQuotes(quotes))
-			.finally(() => setLoading(false))
-	}, [])
-
-	const yodaQuotes = quotes.filter(q => q.author === 'Yoda')
 
 	return (
 		<>
@@ -28,14 +14,26 @@ export function AppFunctionAsAChildComponent() {
 				</div>
 			</header>
 			<main className="container">
-				<div className="columns">
-					<div className="column">
-						<MemorableQuotes isLoading={isLoading} quotes={quotes} />
-					</div>
-					<div className="column">
-						<OnlyYodaQuotes isLoading={isLoading} quotes={yodaQuotes} />
-					</div>
-				</div>
+				<QuoteProvider>
+					{
+						(isLoading, quotes, refetch) => {
+							const yodaQuotes = quotes.filter(q => q.author === 'Yoda')
+							return (
+								<div className="columns">
+									<div className="">
+										<button onClick={() => refetch()}>Refetch</button>
+									</div>
+									<div className="column">
+										<MemorableQuotes isLoading={isLoading} quotes={quotes} />
+									</div>
+									<div className="column">
+										<OnlyYodaQuotes isLoading={isLoading} quotes={yodaQuotes} />
+									</div>
+								</div>
+							)
+						}
+					}
+				</QuoteProvider>
 			</main>
 		</>
 	)
