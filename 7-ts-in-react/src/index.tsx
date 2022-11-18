@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { AppSimpleStaticData } from './71-simple-static-data/AppSimpleStaticData'
-import { AppUseStateAndHooks } from './72-use-state-and-hooks/AppUseStateAndHooks'
+import { AppUseStateAndHooks } from './you-spoil-the-react-fun/72-use-state-and-hooks/AppUseStateAndHooks'
 import { AppMyOwnHook } from './73-my-own-hook/AppMyOwnHook'
 import { AppFunctionAsAChildComponent } from './74-function-as-a-child-component/AppFunctionAsAChildComponent'
 
@@ -38,6 +38,6 @@ root.render(
          Here below you replace the task number, e.g. Run.Task73
          and then you can see them after `npm start` in the browser, and you can start solving.
        */}
-      <Run.Task71 />
+      <Run.Task72 />
   </React.StrictMode>
 );
