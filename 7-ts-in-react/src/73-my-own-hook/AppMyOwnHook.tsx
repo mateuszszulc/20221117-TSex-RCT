@@ -13,10 +13,10 @@ export function AppMyOwnHook() {
 			<main className="container">
 				<div className="columns">
 					<div className="column">
-						<QuotesPanel isLoading={true} quotes={[]} title="All quotes" />
+						<QuotesPanel />
 					</div>
 					<div className="column">
-						<QuotesPanel isLoading={true} quotes={[]} />
+						<QuotesPanel title="Yoda quotes" filterBy="Yoda" />
 					</div>
 				</div>
 			</main>

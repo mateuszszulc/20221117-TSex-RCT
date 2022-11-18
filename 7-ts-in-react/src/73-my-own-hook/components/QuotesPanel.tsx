@@ -1,15 +1,21 @@
+import { useQuotes } from '../hooks/useQuotes';
 import { QuotesPanelBlock } from './QuotesPanelBlock';
 
-function QuotesPanel ({ isLoading, quotes, title = 'Yoda quotes' }: any ) {
+type QuotesPanelProps = { title?: string, filterBy?: string }
+
+function QuotesPanel({ title = 'All quotes', filterBy = '' }: QuotesPanelProps) {
+
+	const {isLoading, quotes} = useQuotes(filterBy)
+
 	return (
 		<section className="panel is-info">
 			<p className="panel-heading">
 				{title}
 			</p>
-			{ isLoading &&
+			{isLoading &&
 				<div className="panel-block"> loading... </div>
 			}
-			{ !isLoading &&
+			{!isLoading &&
 				quotes.map((q: any) => (<QuotesPanelBlock key={q.text} quote={q} />))
 			}
 		</section>
