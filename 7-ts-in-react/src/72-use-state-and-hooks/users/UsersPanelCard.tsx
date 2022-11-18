@@ -1,4 +1,8 @@
-export function UsersPanelCard({user}: any) {
+import type { User } from "./User"
+
+type UsersPanelCardProps = { user: User }
+
+export function UsersPanelCard({ user }: UsersPanelCardProps) {
     return (
         <div className="card">
             <div className="card-image">
@@ -18,9 +22,9 @@ export function UsersPanelCard({user}: any) {
                         <p className="subtitle is-6">{user.email}</p>
                     </div>
                 </div>
-                 <div className="content">
-                     {user?.company?.catchPhrase}
-                 </div>
+                <div className="content">
+                    {user?.company?.catchPhrase}
+                </div>
                 <div className="content">
                     {user.website}
                 </div>

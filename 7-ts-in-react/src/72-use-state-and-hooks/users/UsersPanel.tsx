@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
-import { usersService } from '../services/users.service';
+import { usersService } from './users.service';
 import { SearchBox } from '../shared/SearchBox'
+import { User } from './User';
 import { UsersPanelCard } from './UsersPanelCard'
 
 export function UsersPanel() {
 
     // here get properly: usersService.getAll()
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState<User[]>([])
     const [filterWord, setFilterWord] = useState('')
 
     useEffect(() => {
-        usersService.getAll().then((values: any) => {
+        usersService.getAll().then((values: User[]) => {
             setUsers(values)
         })
     }, [])
@@ -19,8 +20,7 @@ export function UsersPanel() {
         setFilterWord(text)
     }
 
-    // @ts-ignore
-    const computedUser = users.filter((u: any) => u.name.toLowerCase().includes(filterWord))
+    const computedUsers = users.filter(u => u.name.toLowerCase().includes(filterWord))
 
     return (
         <section className="columns is-multiline">
@@ -28,7 +28,7 @@ export function UsersPanel() {
                 <SearchBox placeholder="Search user name..." onSearch={hanldeSearchInput} />
             </div>
             {
-                computedUser.map((user: any) =>
+                computedUsers.map(user =>
                     <div className="column is-3-widescreen is-4-desktop is-6-tablet is-12-mobile" key={user.id} >
                         <UsersPanelCard user={user} />
                     </div>
