@@ -1,4 +1,3 @@
-import React from 'react'
 import MemorableQuotes from './components/MemorableQuotes'
 
 function AppWithClassComponent () {
@@ -13,7 +12,6 @@ function AppWithClassComponent () {
 			</header>
 			<main className="container">
 				   <div className="row">
-					   {/* @ts-ignore */}
 					   <MemorableQuotes title="Star Wars - quotes, once again..." />
 				   </div>
 			</main>

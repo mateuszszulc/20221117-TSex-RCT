@@ -1,41 +1,54 @@
 import React, { Component } from 'react'
 import { BlockQuote } from './BlockQuote'
 import swQuotesService from '../services/swQuotesService'
+import { Quote } from '../model/Quote'
 
-class MemorableQuotes extends Component {
+type MemorableQuotesProps = {
+	title: string
+}
 
-	state= {
+type MemorableQuotesState = {
+	isLoading: boolean,
+	quotes: Quote[],
+	error?: Error
+}
+
+class MemorableQuotes extends Component<MemorableQuotesProps, MemorableQuotesState> {
+
+	state: MemorableQuotesState = {
 		isLoading: false,
 		quotes: [],
 		error: undefined
 	}
 
 	loadAllTheQuotes() {
-		this.setState({isLoading: true, error: undefined})
+		this.setState({ isLoading: true, error: undefined })
 		swQuotesService.getAll()
-			.then((quotes) => {
-				this.setState({quotes, isLoading: false})
+			.then(quotes => {
+				this.setState({ quotes, isLoading: false })
 			})
-			.catch((error) => {
-				this.setState({error, isLoading: false})
+			.catch((error: unknown) => {
+				if (error instanceof Error) {
+					this.setState({ error, isLoading: false })
+				}
 			})
 	}
 
-	componentDidMount () {
+	componentDidMount() {
 		this.loadAllTheQuotes();
 	}
 
-	render () {
-		const { title } = this.props as any
+	render() {
+		const { title } = this.props
 		const { isLoading, quotes, error } = this.state;
 
 		return (
 			<section className="panel is-info">
 				<p className="panel-heading">
-					{ title }
+					{title}
 				</p>
 				<div className="panel-block is-justify-content-right">
-					<button className="button" onClick={() => this.loadAllTheQuotes() }> 🔁 Refresh </button>
+					<button className="button" onClick={() => this.loadAllTheQuotes()}> 🔁 Refresh </button>
 				</div>
 				{
 					isLoading &&
@@ -46,12 +59,12 @@ class MemorableQuotes extends Component {
 				{
 					!isLoading &&
 					!error &&
-					quotes.map((q: any) => <BlockQuote key={q.text} quote={q} />)
+					quotes.map(q => <BlockQuote key={q.text} quote={q} />)
 				}
 				{
 					error &&
 					<div className="panel-block is-justify-content-center p-4">
-						<div className="notification is-danger is-light">{(error as any).message}</div>
+						<div className="notification is-danger is-light">{error.message}</div>
 					</div>
 				}
 			</section>

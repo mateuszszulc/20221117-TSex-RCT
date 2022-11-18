@@ -26,6 +26,10 @@ async function makeStringPromise() {
     return 'Hello M8!'
 }
 
+function makeStringPromise2() {
+    return Promise.resolve('Hello M8!')
+}
+
 const myStringPromise: Promise<string> = makeStringPromise();
 
 myStringPromise
