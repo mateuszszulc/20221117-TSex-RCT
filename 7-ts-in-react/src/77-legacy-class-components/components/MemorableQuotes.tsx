@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { BlockQuote } from './BlockQuote'
 import swQuotesService from '../services/swQuotesService'
 import { Quote } from '../model/Quote'
