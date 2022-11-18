@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { AppSimpleStaticData } from './71-simple-static-data/AppSimpleStaticData'
-import { AppUseStateAndHooks } from './you-spoil-the-react-fun/72-use-state-and-hooks/AppUseStateAndHooks'
+import { AppUseStateAndHooks } from './72-use-state-and-hooks/AppUseStateAndHooks'
 import { AppMyOwnHook } from './73-my-own-hook/AppMyOwnHook'
 import { AppFunctionAsAChildComponent } from './74-function-as-a-child-component/AppFunctionAsAChildComponent'
 
