@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react"
-import { starWarsQuotesService } from "../../74-function-as-a-child-component/services/swQuotesService"
-import { Quote } from "../model/Quote"
+import { swQuotesService } from "../services/swQuotesService"
 
-export function useQuotes(filterBy = '') {
+export function useQuotes<T>(initialData: T, filterFn: (data: T) => T) {
 	const [isLoading, setLoading] = useState(false)
-	const [quotes, setQuotes] = useState<Quote[]>([])
+	const [quotes, setQuotes] = useState<T>(initialData)
 
 	useEffect(() => {
 		setLoading(true)
-		starWarsQuotesService.getAll()
-			.then(quotes => setQuotes(quotes.filter(q => q.author.includes(filterBy))))
+		swQuotesService.getAll()
+			.then(quotes => {
+				setQuotes(filterFn(quotes))
+			})
 			.finally(() => setLoading(false))
-	}, [filterBy])
+	}, [filterFn])
 
 	return { isLoading, quotes }
 }

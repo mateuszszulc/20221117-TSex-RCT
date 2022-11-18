@@ -1,11 +1,15 @@
 import { useQuotes } from '../hooks/useQuotes';
+import { Quote } from '../model/Quote';
 import { QuotesPanelBlock } from './QuotesPanelBlock';
 
 type QuotesPanelProps = { title?: string, filterBy?: string }
 
 function QuotesPanel({ title = 'All quotes', filterBy = '' }: QuotesPanelProps) {
 
-	const {isLoading, quotes} = useQuotes(filterBy)
+	const {isLoading, quotes} = useQuotes<Quote[]>(
+		[], 
+		(quotes: Quote[]) => quotes.filter(q => q.author.includes(filterBy))
+	)
 
 	return (
 		<section className="panel is-info">

@@ -1,7 +1,5 @@
-import { Quote } from "../model/Quote"
-
 export const swQuotesService = {
-	getAll(): Promise<Quote[]> {
+	getAll(): Promise<any> {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				resolve([

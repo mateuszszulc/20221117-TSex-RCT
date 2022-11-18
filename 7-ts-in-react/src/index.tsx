@@ -9,7 +9,7 @@ import { AppFunctionAsAChildComponent } from './74-function-as-a-child-component
 import 'bulma/css/bulma.css';
 import { AppContextCommunication } from './75-context-communication/AppContextCommunication'
 import {
-    AppWithHigherOrderComponents
+  AppWithHigherOrderComponents
 } from './76-higher-order-component/AppWithHigherOrderComponents'
 import AppWithClassComponent from './77-legacy-class-components/AppWithClassComponent'
 
@@ -23,21 +23,21 @@ const root = ReactDOM.createRoot(
 * In practice, these are separate folders from the `root` Component.
 * */
 const Run = {
-    Task71: AppSimpleStaticData,
-    Task72: AppUseStateAndHooks,
-    Task73: AppMyOwnHook,
-    Task74: AppFunctionAsAChildComponent,
-    Task75: AppContextCommunication,
-    Task76: AppWithHigherOrderComponents,
-    Task77: AppWithClassComponent,
+  Task71: AppSimpleStaticData,
+  Task72: AppUseStateAndHooks,
+  Task73: AppMyOwnHook,
+  Task74: AppFunctionAsAChildComponent,
+  Task75: AppContextCommunication,
+  Task76: AppWithHigherOrderComponents,
+  Task77: AppWithClassComponent,
 }
 
 root.render(
   <React.StrictMode>
-      {/*
+    {/*
          Here below you replace the task number, e.g. Run.Task73
          and then you can see them after `npm start` in the browser, and you can start solving.
        */}
-      <Run.Task72 />
+    <Run.Task73 />
   </React.StrictMode>
 );
